@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Hello World</title>
+  </head>
+  <body>
+    <h1>AngularJS Example: Hello World</h1>
+    <div ng-controller="HelloWorld.Controller">
+      Input your name →
+      <input type="text" ng-model="name" size="20">
+      <hr>
+      <p>{{greeting}} {{name}}!</p>
+      <hr>
+      <p><button ng-click="bye()">Bye!</button></p>
+    </div>
+  </body>
+</html>
