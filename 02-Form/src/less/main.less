@@ -1,0 +1,133 @@
+.clearfix() {
+  zoom: 1;
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+body {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  color: #666;
+  background-color: #f5f5f5;
+}
+h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+.mark() {
+  padding: 4px 8px;
+  margin-right: 4px;
+}
+span.note {
+  .mark();
+  font-size: 85%;
+}
+span.valid {
+  .mark();
+  color: #fff;
+  font-size: 80%;
+  background-color: #6d0;
+}
+span.error {
+  .mark();
+  color: #fff;
+  font-size: 80%;
+  background-color: #f66;
+}
+#signupForm {
+  width: 600px;
+  padding: 12px;
+  margin: 40px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 80%;
+  background-color: #f0f0f0;
+  hr {
+    margin: 12px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #fff;
+  }
+  div.actions {
+    margin-top: 8px;
+  }
+  div.form-actions {
+    margin-top: 8px;
+    text-align: center;
+  }
+  a {
+    font-size: 90%;
+    text-decoration: none;
+    &.action {
+      padding: 4px 8px;
+      color: #fff;
+      background-color: #1570A6;
+      &:hover, &:active {
+        background-color: #06f;
+      }
+    }
+    &.remove {
+      font-size: 60%;
+      padding: 4px 6px;
+      border: 1px solid #ccc;
+      color: #fff;
+      background-color: #999;
+      &:hover, &:active {
+        background-color: #666;
+      }
+    }
+  }
+  p.form-question {
+    margin: 0 0 4px;
+    border-bottom: 1px solid #CCC;
+  }
+  div.form-answer {
+    margin: 0 0 16px;
+  }
+  div.phone {
+    margin: 0 0 2px;
+  }
+  ul {
+    .clearfix();
+    margin: 0 0 16px;
+    padding: 0;
+    li {
+      float: left;
+      margin: 0 12px 0 0;
+      padding: 0;
+      list-style-type: none;
+    }
+  }
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  input[type=url] {
+    width: 286px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    margin: 0;
+    &:focus {
+      background-color: #ffd;
+    }
+    &.ng-valid:focus {
+      outline-color: #6d0;
+    }
+    &.ng-invalid:focus {
+      outline-color: #fcc;
+    }
+  }
+  input[type=text] {
+    &.name { width: 134px; }
+    &.phoneNumber { width: 134px; }
+  }
+  h2 {
+    font-size: 110%;
+  }
+  pre {
+    padding: 4px;
+    border: 1px solid #ccc;
+    font-size: 120%;
+    background-color: #fff;
+  }
+}

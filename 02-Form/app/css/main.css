@@ -1,0 +1,142 @@
+body {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  color: #666;
+  background-color: #f5f5f5;
+}
+h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+span.note {
+  padding: 4px 8px;
+  margin-right: 4px;
+  font-size: 85%;
+}
+span.valid {
+  padding: 4px 8px;
+  margin-right: 4px;
+  color: #fff;
+  font-size: 80%;
+  background-color: #6d0;
+}
+span.error {
+  padding: 4px 8px;
+  margin-right: 4px;
+  color: #fff;
+  font-size: 80%;
+  background-color: #f66;
+}
+#signupForm {
+  width: 600px;
+  padding: 12px;
+  margin: 40px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 80%;
+  background-color: #f0f0f0;
+}
+#signupForm hr {
+  margin: 12px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+#signupForm div.actions {
+  margin-top: 8px;
+}
+#signupForm div.form-actions {
+  margin-top: 8px;
+  text-align: center;
+}
+#signupForm a {
+  font-size: 90%;
+  text-decoration: none;
+}
+#signupForm a.action {
+  padding: 4px 8px;
+  color: #fff;
+  background-color: #1570A6;
+}
+#signupForm a.action:hover,
+#signupForm a.action:active {
+  background-color: #06f;
+}
+#signupForm a.remove {
+  font-size: 60%;
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  color: #fff;
+  background-color: #999;
+}
+#signupForm a.remove:hover,
+#signupForm a.remove:active {
+  background-color: #666;
+}
+#signupForm p.form-question {
+  margin: 0 0 4px;
+  border-bottom: 1px solid #CCC;
+}
+#signupForm div.form-answer {
+  margin: 0 0 16px;
+}
+#signupForm div.phone {
+  margin: 0 0 2px;
+}
+#signupForm ul {
+  zoom: 1;
+  margin: 0 0 16px;
+  padding: 0;
+}
+#signupForm ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#signupForm ul li {
+  float: left;
+  margin: 0 12px 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+#signupForm input[type=text],
+#signupForm input[type=password],
+#signupForm input[type=email],
+#signupForm input[type=url] {
+  width: 286px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  margin: 0;
+}
+#signupForm input[type=text]:focus,
+#signupForm input[type=password]:focus,
+#signupForm input[type=email]:focus,
+#signupForm input[type=url]:focus {
+  background-color: #ffd;
+}
+#signupForm input[type=text].ng-valid:focus,
+#signupForm input[type=password].ng-valid:focus,
+#signupForm input[type=email].ng-valid:focus,
+#signupForm input[type=url].ng-valid:focus {
+  outline-color: #6d0;
+}
+#signupForm input[type=text].ng-invalid:focus,
+#signupForm input[type=password].ng-invalid:focus,
+#signupForm input[type=email].ng-invalid:focus,
+#signupForm input[type=url].ng-invalid:focus {
+  outline-color: #fcc;
+}
+#signupForm input[type=text].name {
+  width: 134px;
+}
+#signupForm input[type=text].phoneNumber {
+  width: 134px;
+}
+#signupForm h2 {
+  font-size: 110%;
+}
+#signupForm pre {
+  padding: 4px;
+  border: 1px solid #ccc;
+  font-size: 120%;
+  background-color: #fff;
+}
