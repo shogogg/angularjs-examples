@@ -128,8 +128,8 @@ var SignupForm;
     })();
     SignupForm.Model = Model;    
     var Controller = (function () {
-        function Controller($scope) {
-            var data = new Model();
+        function Controller($scope, $window) {
+            var data = new Model(), name = data.name;
             $scope.data = data;
             $scope.phoneTypes = SignupForm.Data.PhoneTypes;
             $scope.langs = SignupForm.Data.Langs;
@@ -149,7 +149,8 @@ var SignupForm;
                 return JSON.stringify(data, undefined, 2);
             };
             $scope.submit = function () {
-                alert('コンニチハ, ' + data.name.lastName + data.name.firstName + '=サン!');
+                var msg = 'ドーモ。' + data.name.phoneticLastName + data.name.phoneticFirstName + '＝サン。';
+                $window.alert(msg);
             };
         }
         return Controller;

@@ -91,6 +91,6 @@ module SignupForm {
         submit(): void;
     }
     class Controller {
-        constructor ($scope: Scope);
+        constructor ($scope: Scope, $window: Window);
     }
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app>
   <head>
+    <meta charset="utf-8">
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
@@ -13,11 +14,21 @@
       <div class="form-answer">
         <input type="text" name="username" ng-model="data.username"
           ng-minlength="8" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]*$/" required>
-        <span class="error" ng-show="form.username.$error.pattern">半角英数字のみで入力してください</span>
-        <span class="error" ng-show="form.username.$error.minlength">8文字以上で入力してください</span>
-        <span class="error" ng-show="form.username.$error.maxlength">16文字以内で入力してください</span>
-        <span class="error" ng-show="form.username.$error.required">入力してください</span>
-        <span class="valid" ng-show="form.username.$valid">OK</span>
+        <span class="error" ng-show="form.username.$error.pattern">
+          半角英数字のみで入力してください
+        </span>
+        <span class="error" ng-show="form.username.$error.minlength">
+          8文字以上で入力してください
+        </span>
+        <span class="error" ng-show="form.username.$error.maxlength">
+          16文字以内で入力してください
+        </span>
+        <span class="error" ng-show="form.username.$error.required">
+          入力してください
+        </span>
+        <span id="username-msg-valid" class="valid" ng-show="form.username.$valid">
+          OK
+        </span>
       </div>
 
       <p class="form-question">パスワード:</p>
@@ -25,10 +36,18 @@
         <input type="{{textOrPassword()}}" name="password" ng-model="data.password"
           ng-minlength="8" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]*$/" required>
         <span class="valid" ng-show="form.password.$valid">OK</span>
-        <span class="error" ng-show="form.password.$error.pattern">半角英数字のみで入力してください</span>
-        <span class="error" ng-show="form.password.$error.minlength">8文字以上で入力してください</span>
-        <span class="error" ng-show="form.password.$error.maxlength">16文字以内で入力してください</span>
-        <span class="error" ng-show="form.password.$error.required">入力してください</span>
+        <span class="error" ng-show="form.password.$error.pattern">
+          半角英数字のみで入力してください
+        </span>
+        <span class="error" ng-show="form.password.$error.minlength">
+          8文字以上で入力してください
+        </span>
+        <span class="error" ng-show="form.password.$error.maxlength">
+          16文字以内で入力してください
+        </span>
+        <span class="error" ng-show="form.password.$error.required">
+          入力してください
+        </span>
         <br>
         <input type="checkbox" id="passwordVisible" ng-model="passwordVisible">
         <label for="passwordVisible">パスワードを表示する</label>
@@ -44,17 +63,18 @@
           ng-show="form.firstName.$error.required || form.lastName.$error.required">
           入力してください
         </span>
-        <span class="valid" ng-show="form.firstName.$valid &amp;&amp; form.lastName.$valid">
+        <span class="valid"
+          ng-show="form.firstName.$valid &amp;&amp; form.lastName.$valid">
           OK
         </span>
       </div>
 
       <p class="form-question">フリガナ:</p>
       <div class="form-answer">
-        <input type="text" name="phoneticLastName" ng-model="data.name.phoneticLastName"
-          class="name" placeholder="セイ" ng-pattern="/^[ァ-ヶー]*$/" required>
-        <input type="text" name="phoneticFirstName" ng-model="data.name.phoneticFirstName"
-          class="name" placeholder="メイ" ng-pattern="/^[ァ-ヶー]*$/" required>
+        <input type="text" name="phoneticLastName" class="name" placeholder="セイ"
+          ng-model="data.name.phoneticLastName" ng-pattern="/^[ァ-ヶー]*$/" required>
+        <input type="text" name="phoneticFirstName" class="name" placeholder="メイ"
+          ng-model="data.name.phoneticFirstName" ng-pattern="/^[ァ-ヶー]*$/" required>
         <span class="error"
           ng-show="form.phoneticFirstName.$error.pattern || form.phoneticLastName.$error.pattern">
           カタカナで入力してください
@@ -72,7 +92,9 @@
       <p class="form-question">メールアドレス:</p>
       <div class="form-answer">
         <input type="email" name="email" ng-model="data.email" required>
-        <span class="error" ng-show="form.email.$error.email">正しいメールアドレスを入力してください</span>
+        <span class="error" ng-show="form.email.$error.email">
+          正しいメールアドレスを入力してください
+        </span>
         <span class="error" ng-show="form.email.$error.required">入力してください</span>
         <span class="valid" ng-show="form.email.$valid">OK</span>
       </div>
@@ -80,7 +102,9 @@
       <p class="form-question">URL:</p>
       <div class="form-answer">
         <input type="url" name="url" ng-model="data.url">
-        <span class="error" ng-show="form.url.$error.url">正しいメールアドレスを入力してください</span>
+        <span class="error" ng-show="form.url.$error.url">
+          正しいURLを入力してください
+        </span>
         <span class="valid" ng-show="form.url.$valid">OK</span>
       </div>
 
@@ -148,7 +172,7 @@
 
       <hr>
 
-      <h2>Debug view:</h2>
+      <h2>Data Preview:</h2>
       <pre>{{dataAsPrettyJson()}}</pre>
     </form>
   </body>

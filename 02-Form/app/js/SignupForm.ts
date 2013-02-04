@@ -33,8 +33,9 @@ module SignupForm {
 
   // Form Controller
   export class Controller {
-    constructor($scope: Scope) {
-      var data: Model = new Model();
+    constructor($scope: Scope, $window: Window) {
+      var data: Model = new Model(),
+          name: Data.StructuredName = data.name;
 
       $scope.data = data;
       $scope.phoneTypes = Data.PhoneTypes;
@@ -56,7 +57,10 @@ module SignupForm {
         return JSON.stringify(data, undefined, 2);
       };
       $scope.submit = () => {
-        alert('コンニチハ, ' + data.name.lastName + data.name.firstName + '=サン!');
+        var msg = 'ドーモ。'
+          + data.name.phoneticLastName
+          + data.name.phoneticFirstName + '＝サン。';
+        $window.alert(msg);
       };
     }
   }

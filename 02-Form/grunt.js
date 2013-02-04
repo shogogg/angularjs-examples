@@ -49,11 +49,6 @@ module.exports = function(grunt) {
         configFile: 'test/config/testacular-unit.conf.js',
         runnerPort: 9100,
         port: 9876
-      },
-      e2e: {
-        configFile: 'test/config/testacular-e2e.conf.js',
-        runnerPort: 9101,
-        port: 9877
       }
     },
     watch: {
@@ -71,5 +66,4 @@ module.exports = function(grunt) {
   grunt.registerTask('compile', 'typescript less');
   grunt.registerTask('test', 'clean compile server testacular');
   grunt.registerTask('unit-test', 'clean compile server testacular:unit');
-  grunt.registerTask('e2e-test', 'clean compile server testacular:e2e');
 };
