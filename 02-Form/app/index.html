@@ -110,8 +110,7 @@
       <p class="form-question">好きな球技（任意回答・複数可）:</p>
       <ul>
         <li ng-repeat="x in ballGames">
-          <input type="checkbox" id="ballGame-{{x.id}}" value="{{x.id}}"
-            ng-model="data.ballGame[x.id]" ng-required="isBallGameSelected()">
+          <input type="checkbox" id="ballGame-{{x.id}}" value="{{x.id}}" ng-model="data.ballGame[x.id]">
           <label for="ballGame-{{x.id}}">{{x.label}}</label>
         </li>
       </ul>
