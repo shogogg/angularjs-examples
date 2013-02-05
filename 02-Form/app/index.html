@@ -89,6 +89,33 @@
         </span>
       </div>
 
+      <p class="form-question">好きなプログラミング言語:</p>
+      <div class="form-answer">
+        <select name="lang" ng-model="data.lang"
+          ng-options="x.id as x.label for x in langs" required>
+          <option value="">----------------</option>
+        </select>
+        <span class="error" ng-show="form.lang.$error.required">選択してください</span>
+        <span class="valid" ng-show="form.lang.$valid">OK</span>
+      </div>
+
+      <p class="form-question">好きな色:</p>
+      <ul>
+        <li ng-repeat="x in colors">
+          <input type="radio" id="browser-{{x.id}}" value="{{x.id}}" ng-model="data.color">
+          <label for="browser-{{x.id}}">{{x.label}}</label>
+        </li>
+      </ul>
+
+      <p class="form-question">好きな球技（任意回答・複数可）:</p>
+      <ul>
+        <li ng-repeat="x in ballGames">
+          <input type="checkbox" id="ballGame-{{x.id}}" value="{{x.id}}"
+            ng-model="data.ballGame[x.id]" ng-required="isBallGameSelected()">
+          <label for="ballGame-{{x.id}}">{{x.label}}</label>
+        </li>
+      </ul>
+
       <p class="form-question">メールアドレス:</p>
       <div class="form-answer">
         <input type="email" name="email" ng-model="data.email" required>
@@ -134,33 +161,6 @@
           <a href="" class="action" ng-click="addPhone()">電話番号を追加</a>
         </div>
       </div>
-
-      <p class="form-question">好きなプログラミング言語:</p>
-      <div class="form-answer">
-        <select name="lang" ng-model="data.lang"
-          ng-options="x.id as x.label for x in langs" required>
-          <option value="">----------------</option>
-        </select>
-        <span class="error" ng-show="form.lang.$error.required">選択してください</span>
-        <span class="valid" ng-show="form.lang.$valid">OK</span>
-      </div>
-
-      <p class="form-question">好きな色:</p>
-      <ul>
-        <li ng-repeat="x in colors">
-          <input type="radio" id="browser-{{x.id}}" value="{{x.id}}" ng-model="data.color">
-          <label for="browser-{{x.id}}">{{x.label}}</label>
-        </li>
-      </ul>
-
-      <p class="form-question">好きな球技（任意回答・複数可）:</p>
-      <ul>
-        <li ng-repeat="x in ballGames">
-          <input type="checkbox" id="ballGame-{{x.id}}" value="{{x.id}}"
-            ng-model="data.ballGame[x.id]" ng-required="isBallGameSelected()">
-          <label for="ballGame-{{x.id}}">{{x.label}}</label>
-        </li>
-      </ul>
 
       <hr>
 
