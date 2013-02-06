@@ -14,6 +14,7 @@
       <div class="form-answer">
         <input type="text" name="username" ng-model="data.username"
           ng-minlength="8" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]*$/" required>
+
         <span class="error" ng-show="form.username.$error.pattern">
           半角英数字のみで入力してください
         </span>
@@ -26,16 +27,14 @@
         <span class="error" ng-show="form.username.$error.required">
           入力してください
         </span>
-        <span class="valid" ng-show="form.username.$valid">
-          OK
-        </span>
+        <span class="valid" ng-show="form.username.$valid">OK</span>
       </div>
 
       <p class="form-question">パスワード:</p>
       <div class="form-answer">
         <input type="{{textOrPassword()}}" name="password" ng-model="data.password"
           ng-minlength="8" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]*$/" required>
-        <span class="valid" ng-show="form.password.$valid">OK</span>
+        
         <span class="error" ng-show="form.password.$error.pattern">
           半角英数字のみで入力してください
         </span>
@@ -48,45 +47,39 @@
         <span class="error" ng-show="form.password.$error.required">
           入力してください
         </span>
+        <span class="valid" ng-show="form.password.$valid">OK</span>
         <br>
         <input type="checkbox" id="passwordVisible" ng-model="passwordVisible">
         <label for="passwordVisible">パスワードを表示する</label>
       </div>
 
       <p class="form-question">氏名:</p>
-      <div class="form-answer">
+      <div ng-form name="nameForm" class="form-answer">
         <input type="text" name="lastName" ng-model="data.name.lastName"
           class="name" placeholder="姓" required>
         <input type="text" name="firstName" ng-model="data.name.firstName"
           class="name" placeholder="名" required>
-        <span class="error"
-          ng-show="form.firstName.$error.required || form.lastName.$error.required">
+        
+        <span class="error" ng-show="nameForm.$error.required">
           入力してください
         </span>
-        <span class="valid"
-          ng-show="form.firstName.$valid &amp;&amp; form.lastName.$valid">
-          OK
-        </span>
+        <span class="valid" ng-show="nameForm.$valid">OK</span>
       </div>
 
       <p class="form-question">フリガナ:</p>
-      <div class="form-answer">
+      <div ng-form name="phoneticNameForm" class="form-answer">
         <input type="text" name="phoneticLastName" class="name" placeholder="セイ"
           ng-model="data.name.phoneticLastName" ng-pattern="/^[ァ-ヶー]*$/" required>
         <input type="text" name="phoneticFirstName" class="name" placeholder="メイ"
           ng-model="data.name.phoneticFirstName" ng-pattern="/^[ァ-ヶー]*$/" required>
-        <span class="error"
-          ng-show="form.phoneticFirstName.$error.pattern || form.phoneticLastName.$error.pattern">
+        
+        <span class="error" ng-show="phoneticNameForm.$error.pattern">
           カタカナで入力してください
         </span>
-        <span class="error"
-          ng-show="form.phoneticFirstName.$error.required || form.phoneticLastName.$error.required">
+        <span class="error" ng-show="phoneticNameForm.$error.required">
           入力してください
         </span>
-        <span class="valid"
-          ng-show="form.phoneticFirstName.$valid &amp;&amp; form.phoneticLastName.$valid">
-          OK
-        </span>
+        <span class="valid" ng-show="phoneticNameForm.$valid">OK</span>
       </div>
 
       <p class="form-question">好きなプログラミング言語:</p>
@@ -143,6 +136,7 @@
           </select>
           <input type="text" name="phoneNumber" class="phoneNumber" placeholder="電話番号"
             ng-model="phone.number" ng-minlength="10" ng-maxlength="11" ng-pattern="/^\d+$/" required>
+            
           <span class="error" ng-show="phoneForm.phoneNumber.$error.pattern">
             半角数字のみで入力してください
           </span>
